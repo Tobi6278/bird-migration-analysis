@@ -20,6 +20,7 @@ fig = px.line_geo(
     lat='Lat',
     lon='Lon',
     color='Species',
+    line_group='Species',
     projection='natural earth'
 )
 
