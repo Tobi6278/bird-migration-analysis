@@ -51,15 +51,28 @@ fig = px.line_geo(
 )
 
 fig.update_traces(
-    mode="lines+markers",
-    marker=dict(size=4),
+    mode="lines",
     line=dict(width=2)
 )
+
+points_fig = px.scatter_geo(
+    bird_data_long,
+    lat="Lat",
+    lon="Lon",
+    color="Species",
+    symbol="Point",
+    projection="natural earth"
+)
+
+points_fig.update_traces(marker=dict(size=6))
+
+for trace in points_fig.data:
+    fig.add_trace(trace)
 
 fig.update_layout(
     title="Top 20 Birds per Species Migration Paths",
     height=700,
-    legend_title="Species"
+    legend_title="Species / Point"
 )
 
 st.plotly_chart(fig, use_container_width=True)
