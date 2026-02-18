@@ -5,7 +5,7 @@ import numpy as np
 
 st.set_page_config(page_title="Bird Migration Map", layout="wide")
 
-st.title("🗺️ Bird Migration Paths")
+st.title("Bird Migration Paths")
 
 @st.cache_data
 def load_data():
@@ -42,7 +42,6 @@ bird_data_long = pd.DataFrame({
     'Point': ['Start', 'End'] * len(top_birds)
 })
 
-# Plot
 fig = px.line_geo(
     bird_data_long,
     lat="Lat",
