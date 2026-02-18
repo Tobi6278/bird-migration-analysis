@@ -75,4 +75,6 @@ fig.update_layout(
     legend_title="Species / Point"
 )
 
+fig.update_traces(visible="legendonly")
+
 st.plotly_chart(fig, use_container_width=True)
